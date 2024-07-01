@@ -1,0 +1,29 @@
+name: ClashNodes
+
+on:
+  workflow_dispatch:
+  schedule:   
+    - cron: '0 4 * * *'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: Run Command
+        run: |
+          sh ./run.sh
+      - name: Commit Changes
+        run: |
+         git config --global user.email "a@a.a"
+         git config --global user.name "a"
+         git add .
+         git commit -m"`date`更新"
+         git pull --rebase
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.TOKEN }}
+          branch: main
+          force_with_lease: true
+          directory: .
