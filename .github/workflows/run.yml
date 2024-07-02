@@ -3,7 +3,7 @@ name: ClashNodes
 on:
   workflow_dispatch:
   schedule:   
-    - cron: '0 4 * * *'
+    - cron: '0 3 * * *'
 
 jobs:
   run:
@@ -15,8 +15,8 @@ jobs:
           sh ./run.sh
       - name: Commit Changes
         run: |
-         git config --global user.email "a@a.a"
-         git config --global user.name "a"
+         git config --global user.email "84223284+ugwd01bFwiza@users.noreply.github.com"
+         git config --global user.name "ugwd01bFwiza"
          git add .
          git commit -m"`date`更新"
          git pull --rebase
