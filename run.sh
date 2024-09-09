@@ -2,11 +2,11 @@ year=$(date +%Y)
 month=$(date +%m)
 day=$(date +%d)
 
-site=clashgithub
-#site=myclash
+site=clash-meta
 
 url="https://$site.github.io/uploads/$year/$month/0-$year$month$day.yaml"
 
-wget $url -O ./$site.yaml
+#wget $url -O ./$site.yaml
+#cp ./$site.yaml ./clash.yaml
 
-cp ./$site.yaml ./clash.yaml
+wget $url -O ./clash.yaml
