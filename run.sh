@@ -2,7 +2,9 @@ year=$(date +%Y)
 month=$(date +%m)
 day=$(date +%d)
 
-site=clash-meta
+#site=clash-meta
+site=myclash
+site=stashnode
 
 url="https://$site.github.io/uploads/$year/$month/0-$year$month$day.yaml"
 
